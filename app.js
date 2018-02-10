@@ -18,8 +18,8 @@ app.get('/greetings/:name', (req, res) => {
 });
 
 app.get('/', (req, res) => {
-  console.log(req.query)
-  let queryString = "funny cat";
+  console.log(req.query);
+  let queryString = req.query.term;
   let term = encodeURIComponent(queryString);
   let url = 'http://api.giphy.com/v1/gifs/search?q=' + term + '&api_key=dc6zaTOxFJmzC';
 
